@@ -1,4 +1,4 @@
-package ru.wsoft.tests.ui.adm.core;
+package core;
 
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -7,9 +7,6 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import ru.wsoft.tests.framework.utils.handlers.SQLHandler;
-import ru.wsoft.tests.framework.utils.handlers.XMLHandler;
-import ru.wsoft.tests.ui.adm.BaseConsoleTest;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +18,7 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 import static org.junit.jupiter.api.parallel.ExecutionMode.SAME_THREAD;
 
 @Execution(CONCURRENT)
-public class editTests extends BaseConsoleTest {
+public class editTests {
     @Feature("Проверка категории \"Настройки\"")
     @Tag("UI")
     @Tag("Admin")

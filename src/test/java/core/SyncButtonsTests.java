@@ -1,19 +1,14 @@
-package ru.wsoft.tests.ui.adm.core;
+package core;
 
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import ru.wsoft.tests.framework.cache.CacheChecks;
-import ru.wsoft.tests.framework.utils.handlers.SQLHandler;
-import ru.wsoft.tests.ui.adm.BaseConsoleTest;
 
 import java.util.ArrayList;
 
-public class SyncButtonsTests extends BaseConsoleTest {
+public class SyncButtonsTests {
 
-    CacheChecks cache = new CacheChecks();
-    SQLHandler sql;
     private final String cacheService1 = "WCS:group=Services,instance-type=Cache,name=cache-service1";
 
     @Feature("CacheSyncButton")

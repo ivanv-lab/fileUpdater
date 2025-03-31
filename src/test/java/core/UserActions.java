@@ -1,4 +1,4 @@
-package ru.wsoft.tests.ui.adm.core;
+package core;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
@@ -11,18 +11,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.openqa.selenium.WebElement;
-import ru.wsoft.tests.ui.adm.BaseConsoleTest;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
-public class UserActions extends BaseConsoleTest {
+public class UserActions{
 
     @Epic("Действия пользователей")
     @ParameterizedTest(name = "Проверка фильтрации по объекту {0} #({index})")

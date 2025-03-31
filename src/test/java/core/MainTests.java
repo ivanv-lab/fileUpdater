@@ -1,4 +1,4 @@
-package ru.wsoft.tests.ui.adm.core;
+package core;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -9,12 +9,11 @@ import org.json.simple.JSONObject;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.wsoft.tests.ui.adm.BaseConsoleTest;
 
 import java.io.File;
 import java.io.IOException;
 
-public class MainTests extends BaseConsoleTest {
+public class MainTests {
 
     @Epic("Панель администратора")
     @Tag("UI")

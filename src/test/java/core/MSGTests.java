@@ -1,8 +1,6 @@
-package ru.wsoft.tests.ui.adm.core;
+package core;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.*;
-import jdk.jfr.Label;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,15 +8,13 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import ru.wsoft.tests.framework.utils.model.DataGenerator;
-import ru.wsoft.tests.ui.adm.BaseConsoleTest;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
 @Execution(CONCURRENT)
-public class MSGTests extends BaseConsoleTest {
+public class MSGTests {
 
     public static Stream<Arguments> subSectionList() {
         return Stream.of(

@@ -1,34 +1,29 @@
 package org.spring;
 
 import java.io.*;
-import java.nio.charset.Charset;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    static String filePath;
+    static File files;
+    static String[] filePaths;
+    static List<Class> classes;
+    static List<Method> methods;
+
+    public static void main(String[] args) throws ClassNotFoundException {
+
+        filePath="src/test/java/core";
+        files=new File(filePath);
+        filePaths=files.list();
+
         System.out.println("Hello world!");
-        String filePath="C:/Users/Иван/Desktop/UserActions.java";
-        BufferedReader reader;
-        List<String> textLines=new ArrayList<>();
+        Arrays.stream(filePaths).forEach(f->System.out.println(f));
 
-        try{
+        classes.add(Class.forName(Arrays.toString(filePaths)));
+        methods.add(classes.stream().forEach(c->c.getMethods()))
 
-            reader=new BufferedReader(new FileReader(filePath));
-            textLines.add(reader.readLine());
-        } catch (IOException e){
-
-            System.out.println(e.getMessage());
-        }
-
-        if(textLines.contains(".calendarSetDate("))
-
-        try(FileWriter writer=new FileWriter(filePath,false)){
-
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-        }
     }
 }
