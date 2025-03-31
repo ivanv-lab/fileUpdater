@@ -23,7 +23,10 @@ public class Main {
         Arrays.stream(filePaths).forEach(f->System.out.println(f));
 
         classes.add(Class.forName(Arrays.toString(filePaths)));
-        methods.add(classes.stream().forEach(c->c.getMethods()))
+        for(Class c:classes){
+            methods.addAll(Arrays.stream(c.getMethods()).toList());
+        }
+
 
     }
 }
