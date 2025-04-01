@@ -1,8 +1,9 @@
 package org.spring;
 
 import java.io.*;
-import java.lang.reflect.Method;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.attribute.FileAttribute;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +18,6 @@ public class Main {
         filePath="src/test/java/core";
         files=new File(filePath);
         filePaths=files.list();
-
-        System.out.println("Hello world!");
-        Arrays.stream(filePaths).forEach(f->System.out.println(f));
 
         Arrays.stream(filePaths).forEach(f->{
             List<String> fileLines=new ArrayList<>();
@@ -44,12 +42,32 @@ public class Main {
                 }
             }
 
-            for(String l:fileLines){
-                System.out.println(l);
+            try {
+                //Files.createFile(Path.of("src/test/java/newtest/" + f));
+                File file=new File("src/test/java/newtest/" + f);
+                file.createNewFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
 
-            System.out.println();
-            System.out.println("zzzzzzz");
+            try{
+                FileWriter writer=new FileWriter("src/test/java/newtest/" + f);
+                for(String n:fileLines){
+                    writer.append(n+"\n");
+                }
+                writer.close();
+            } catch (IOException ioException){
+                System.out.println(ioException.getMessage());
+            }
+
+//            try(FileWriter fw=new FileWriter("src/test/java/newtest/"+f,true)){
+//                Files.createFile(Path.of("src/test/java/newtest/" + f));
+//                for(String l:fileLines){
+//                    System.out.println(l);
+//                }
+//            } catch (IOException e){
+//                System.out.println(e.getMessage());
+//            }
         });
     }
 }
